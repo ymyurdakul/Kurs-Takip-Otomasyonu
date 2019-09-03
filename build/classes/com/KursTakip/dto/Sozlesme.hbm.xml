@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-Apr-2019 16:18:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.KursTakip.Dto.Sozlesme" table="sozlesme" catalog="dershane">
+        <id name="sozlesmeId" type="int">
+            <column name="sozlesmeId" />
+            <generator class="assigned"></generator>
+        </id>
+        <many-to-one name="ogrenci" class="com.KursTakip.Dto.Ogrenci" fetch="select">
+            <column name="ogrId" />
+        </many-to-one>
+        <property name="tarih" type="date">
+            <column name="tarih" length="10" />
+        </property>
+        <property name="toplamTutar" type="big_decimal">
+            <column name="toplamTutar" precision="14" />
+        </property>
+        <property name="kalanBorc" type="big_decimal">
+            <column name="kalanBorc" />
+        </property>
+        <property name="pesinat" type="big_decimal">
+            <column name="pesinat" precision="14" />
+        </property>
+        <property name="borcluAd" type="string">
+            <column name="borcluAd" length="45" />
+        </property>
+        <property name="borcluTelefon" type="string">
+            <column name="borcluTelefon" length="45" />
+        </property>
+        <property name="kefilAd" type="string">
+            <column name="kefilAd" length="45" />
+        </property>
+        <property name="sozlesmeNot" type="string">
+            <column name="sozlesmeNot" length="45" />
+        </property>
+        <property name="sozlesmeVadeTarih" type="date">
+            <column name="sozlesmeVadeTarih" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-Apr-2019 16:18:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.KursTakip.Dto.Kullanici" table="kullanici" catalog="dershane">
+        <composite-id name="id" class="com.KursTakip.Dto.KullaniciId">
+            <key-property name="kullaniciAdi" type="string">
+                <column name="KullaniciAdi" length="15" />
+            </key-property>
+            <key-property name="sifre" type="string">
+                <column name="Sifre" length="10" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

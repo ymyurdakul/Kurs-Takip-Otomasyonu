@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-Apr-2019 16:18:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.KursTakip.Dto.Ogrenci" table="ogrenci" catalog="dershane">
+        <id name="ogrId" type="java.lang.Integer">
+            <column name="ogrId" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="numara" type="java.lang.Integer">
+            <column name="numara" unique="true" />
+        </property>
+        <property name="ad" type="string">
+            <column name="ad" length="15" />
+        </property>
+        <property name="soyad" type="string">
+            <column name="soyad" length="15" />
+        </property>
+        <property name="tc" type="string">
+            <column name="tc" length="11" not-null="true" />
+        </property>
+        <property name="dgmTarih" type="date">
+            <column name="dgmTarih" length="10" />
+        </property>
+        <property name="kayitTarih" type="date">
+            <column name="kayitTarih" length="10" />
+        </property>
+        <property name="dgmYer" type="string">
+            <column name="dgmYer" length="15" />
+        </property>
+        <property name="cinsiyet" type="string">
+            <column name="cinsiyet" length="5" />
+        </property>
+        <property name="kanGrp" type="string">
+            <column name="kanGrp" length="10" />
+        </property>
+        <property name="referans" type="string">
+            <column name="referans" length="15" />
+        </property>
+        <property name="resimPath" type="string">
+            <column name="resimPath" length="65" />
+        </property>
+        <property name="notlar" type="string">
+            <column name="notlar" length="150" />
+        </property>
+        <property name="servisGuzergah" type="string">
+            <column name="servisGuzergah" length="100" />
+        </property>
+        <property name="okul" type="string">
+            <column name="okul" length="20" />
+        </property>
+        <property name="sinif" type="string">
+            <column name="sinif" length="15" />
+        </property>
+        <property name="seriNo" type="string">
+            <column name="seriNo" length="7" />
+        </property>
+        <property name="il" type="string">
+            <column name="il" length="7" />
+        </property>
+        <property name="ilce" type="string">
+            <column name="ilce" length="15" />
+        </property>
+        <property name="ciltNo" type="string">
+            <column name="ciltNo" length="7" />
+        </property>
+        <property name="aileSiraNo" type="string">
+            <column name="aileSiraNo" length="7" />
+        </property>
+        <property name="anneAdSoyad" type="string">
+            <column name="anneAdSoyad" length="15" />
+        </property>
+        <property name="anneTc" type="string">
+            <column name="anneTc" length="11" />
+        </property>
+        <property name="anneDgmTarih" type="date">
+            <column name="anneDgmTarih" length="10" />
+        </property>
+        <property name="anneMeslek" type="string">
+            <column name="anneMeslek" length="15" />
+        </property>
+        <property name="anneEgitim" type="string">
+            <column name="anneEgitim" length="10" />
+        </property>
+        <property name="annTelefon" type="string">
+            <column name="annTelefon" length="16" />
+        </property>
+        <property name="babaAdSoyad" type="string">
+            <column name="babaAdSoyad" length="45" />
+        </property>
+        <property name="babaTc" type="string">
+            <column name="babaTc" length="11" />
+        </property>
+        <property name="babaDgmTarih" type="date">
+            <column name="babaDgmTarih" length="10" />
+        </property>
+        <property name="babaMeslek" type="string">
+            <column name="babaMeslek" length="45" />
+        </property>
+        <property name="babaEgitim" type="string">
+            <column name="babaEgitim" length="45" />
+        </property>
+        <property name="babaTelefon" type="string">
+            <column name="babaTelefon" length="45" />
+        </property>
+        <property name="ogrenimSekli" type="string">
+            <column name="ogrenimSekli" length="15" />
+        </property>
+        <set name="sozlesmes" table="sozlesme" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ogrId" />
+            </key>
+            <one-to-many class="com.KursTakip.Dto.Sozlesme" />
+        </set>
+    </class>
+</hibernate-mapping>
